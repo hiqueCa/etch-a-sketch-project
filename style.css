@@ -19,13 +19,12 @@ body {
 .grid {
   display: grid;
   place-items: center;
-  background-color: aqua;
+  background-color: black;
+  padding: 5px;
 }
 
 .grid-item {
   height: 30px;
   width: 30px;
-  padding: 3px;
-  border-color: black;
-  border-width: 3px;
+  background-color: white;
 }
