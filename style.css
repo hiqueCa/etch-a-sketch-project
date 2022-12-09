@@ -1,3 +1,31 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
 .grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.grid {
   display: grid;
+  place-items: center;
+  background-color: aqua;
+}
+
+.grid-item {
+  height: 30px;
+  width: 30px;
+  padding: 3px;
+  border-color: black;
+  border-width: 3px;
 }
