@@ -16,3 +16,11 @@ for (var i = 0; i < gridItemsNumber; i++) {
   gridItem.style.setProperty('height', gridItemDimension);
   grid.appendChild(gridItem);
 };
+
+const gridItems = document.querySelectorAll('.grid-item');
+gridItems.forEach(gridItem => {
+  gridItem.addEventListener(
+    'mouseover', 
+    e => e.target.style.setProperty('background-color', 'black')
+  );
+});
