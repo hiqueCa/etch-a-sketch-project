@@ -1,4 +1,4 @@
-const gridItemsPerRow = 40;
+const gridItemsPerRow = 10;
 const gridItemsNumber = gridItemsPerRow ** 2;
 
 const grid = document.querySelector(".grid");

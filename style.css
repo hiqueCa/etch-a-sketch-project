@@ -19,9 +19,10 @@ body {
 .grid {
   display: grid;
   place-items: center;
-  background-color: black;
   width: 700px;
   height: 700px;
+  border-style: solid;
+  border-width: 5px;
 }
 
 .grid-item {
