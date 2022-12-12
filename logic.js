@@ -1,12 +1,18 @@
-const gridItemsPerRow = 16;
+const gridItemsPerRow = 40;
 const gridItemsNumber = gridItemsPerRow ** 2;
 
-const gridContainer = document.querySelector(".grid");
-gridContainer.style.setProperty('grid-template-columns', `repeat(${gridItemsPerRow}, 1fr)`);
-gridContainer.style.setProperty('grid-template-rows', `repeat(${gridItemsPerRow}, 1fr`);
+const grid = document.querySelector(".grid");
+const gridHeight = grid.clientHeight;
+
+const gridItemDimension = `${gridHeight / gridItemsPerRow}px`;
+
+grid.style.setProperty('grid-template-columns', `repeat(${gridItemsPerRow}, ${gridItemDimension})`);
+grid.style.setProperty('grid-template-rows', `repeat(${gridItemsPerRow}, ${gridItemDimension}`);
 
 for (var i = 0; i < gridItemsNumber; i++) {
   const gridItem = document.createElement("div");
   gridItem.className = "grid-item";
-  gridContainer.appendChild(gridItem);
+  gridItem.style.setProperty('width', gridItemDimension);
+  gridItem.style.setProperty('height', gridItemDimension);
+  grid.appendChild(gridItem);
 };
