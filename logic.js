@@ -37,9 +37,7 @@ const removePastGridItems = (currentGridItems) => {
 const resetGrid = () => {
   const currentGridItems = document.querySelectorAll('.grid-item');
   const newNumberOfGridItems = prompt('Input a new number of cells per row:');
-
-  console.log(newNumberOfGridItems);
-
+  
   if (newNumberOfGridItems && newNumberOfGridItems <= 100) {
     removePastGridItems(currentGridItems);
     generateNewGrid(newNumberOfGridItems);
