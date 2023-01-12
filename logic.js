@@ -11,7 +11,7 @@ const makeGridItemsColourable = () => {
   });
 };
 
-const generateGrid = (numberOfGridItems) => {
+const generateNewGrid = (numberOfGridItems) => {
   const gridItemsPerRow = numberOfGridItems || 16;
   const gridItemsNumber = gridItemsPerRow ** 2;
   const gridItemDimension = `${gridHeight / gridItemsPerRow}px`;
@@ -30,11 +30,17 @@ const generateGrid = (numberOfGridItems) => {
   makeGridItemsColourable();
 };
 
-const resetGrid = () => {
-  const gridItems = document.querySelectorAll('.grid-item');
+const removePastGridItems = (currentGridItems) => {
+  currentGridItems.forEach(gridItem => grid.removeChild(gridItem));
+};
 
-  const newNumberOfCells = prompt('Input a new number of cells per row:');
-  generateGrid(newNumberOfCells);
+const resetGrid = () => {
+  const currentGridItems = document.querySelectorAll('.grid-item');
+  const newNumberOfGridItems = prompt('Input a new number of cells per row:');
+
+  removePastGridItems(currentGridItems);
+
+  generateNewGrid(newNumberOfGridItems);
 }
 
-window.addEventListener('DOMContentLoaded', generateGrid());
+window.addEventListener('DOMContentLoaded', generateNewGrid());
